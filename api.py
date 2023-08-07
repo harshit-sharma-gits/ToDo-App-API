@@ -27,7 +27,7 @@ from functools import wraps
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'thisissecret'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:/H@rshit/Projects/api_example/todo.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///path/to/todo.db'
 
 # Database schema for the API
 db = SQLAlchemy(app)
@@ -269,4 +269,4 @@ def delete_todo(current_user, todo_id):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
